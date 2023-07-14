@@ -1,0 +1,78 @@
+{% extends 'baseAdmin.html' %}
+{% load static %}
+
+{% load crispy_forms_tags %}
+{% block contenido3 %}
+
+
+<style>
+    .table td,
+    .table th {
+        vertical-align: middle;
+        text-align: center;
+    }
+
+    .enlarge-image {
+        transition: transform 0.3s;
+    }
+
+    .enlarge-image:hover {
+        transform: scale(5);
+        max-width: 300px;
+        max-height: 300px;
+    }
+</style>
+
+<div class="container" id="OP2">
+    <div class="row">
+        <div class="col-12 text-center">
+            <h2>Postulaciones</h2>
+            <br><br>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-8">
+            <div class="table-responsive">
+                <table class="table table-striped table-hover">
+                    <thead class="thead-light">
+                        <tr>
+                            <th scope="col">Nombre Postulante</th>
+                            <th scope="col">Rut Postulante</th>
+                            <th scope="col">Edad Postulante</th>
+                            <th scope="col">Estado Postulante</th>
+                            <th scope="col">Imagen Postulante</th>
+                            <th scope="col">Curriculum Postulante</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for pos in postulaciones %}
+                        <tr>
+                            <td>{{pos.nombre_postulante}}</td>
+                            <td>{{pos.rut_postulante}}</td>
+                            <td>{{pos.edad_postulante}}</td>
+                            <td>{{pos.estado_civil_postulante}}</td>
+                            <td>
+                                <img src="{{ pos.imagen_postulante.url }}" alt="imagen postulante" width="50" class="enlarge-image">
+                            </td>
+                            <td>
+                                <a href="{{ pos.curriculum_postulante.url }}" download="">Descargar Archivo</a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+    
+    
+            <div class="col-4"></div>
+        </div>
+    </div>
+
+
+
+
+
+{% endblock %}

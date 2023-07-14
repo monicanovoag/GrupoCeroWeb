@@ -1,0 +1,52 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block contenido %}
+<br>
+
+
+<div class="artistas" style="margin-top: 5px" >
+    <br> <br>
+    <div id="nuestros_artistas" class="row">
+      <div class="cont-profesionales col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        
+        <div class="cont-listado row">
+          <div style="text-align: center;" class="col-lg-4 artista mx-auto" >
+            <div class="art int">
+              <figure>
+                <h2 style="text-align: center;">Datos Del Artista</h2>
+                <a href="{% url 'detalleArtista' a.pk %}">
+
+                  {% if a.foto %}
+                  
+                  <br>
+                  <img width="270" height="350"
+                    style="border-radius: 15px;"
+                    src="{{a.foto.url}}"
+                    class="img-responsive wp-post-image" alt="" decoding="async" loading="lazy"> </a>
+                  <br>
+                  {% else %}
+                  
+                  <img width="270" height="350"
+                  src=""
+                  class="img-responsive wp-post-image" alt="" decoding="async" loading="lazy"> </a>
+                  
+                  {% endif %}  
+                  <br>
+                  
+
+                <h4 class="nombre white">{{a.nombre_artista}} {{a.apellido_artista}} </h4>
+                  <p>
+                    <h5>{{a.correo}}</h5>
+                  </p> 
+
+              </figure>
+              
+
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+
+
+  {% endblock %}

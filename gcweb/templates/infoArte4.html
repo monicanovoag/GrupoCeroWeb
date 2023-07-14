@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block contenido %}
+
+
+
+<div class="container">
+    <div class="row">
+
+        <div class="col-4"><img src="{% static './imagenes/Pintura3.png' %}" class="img-thumbnail" alt="..."></div>
+        <div class="col-8" id="pigcasso">
+            <ul class="list-unstyled">
+                <li><b>La Ambiguedad</b></li>
+                <li>La Ambiguedad como la nombra su autor, retrata los días de caos mental que presentan las personas en diversas etapas de su vida.</li>
+                <li>Pintura : <b>Abstracta</b></li>
+                <li> Técnica usada : <b>expresionismo abstracto</b></li>
+                <li><b>Precio</b>:
+                  <ul>
+                    <li>22.000 usd <b>(Vendido)</b></li>
+                    
+                  </ul>
+                </li>
+              </ul>
+        </div>
+        
+    </div>
+</div>
+
+{% endblock %}

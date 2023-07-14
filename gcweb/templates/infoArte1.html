@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block contenido %}
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4"></div>
+        <div class="col-4"></div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+
+        <div class="col-4"><img src="{%static 'imagenes/Pintura.png' %}" class="img-thumbnail" alt="..."></div>
+        <div class="col-8" id="pigcasso">
+            <ul class="list-unstyled">
+                <li><b>PigCasso</b></li>
+                <li>Una cerdita que vive en Ciudad del Cabo (Sudáfrica) se ha convertido en atracción mediática debido a una curiosa vocación artística que la impulsa a pintar cuadros. La marrana ha sido bautizada con el sobrenombre de Pigcasso -en contracción de 'pig' (cerdo) y el nombre del pintor español Pablo Picasso-, y sus obras, catalogadas por su dueña como "expresionismo abstracto"</li>
+                <li>Pintura : <b>Caos</b></li>
+                <li> técnica usada : <b>expresionismo abstracto</b></li>
+                <li><b>Precio</b>:
+                  <ul>
+                    <li>12.000 usd <b>(Vendido)</b></li>
+                    
+                  </ul>
+                </li>
+                <li>Joanne Lefson, la activista y fundadora del refugio Farm Sanctuary, rescató a Pigcasso de morir en un matadero cuando no tenía ni un mes de vida. Con el tiempo, Lefson se percató de la curiosidad que tenía el pequeño lechón por la pintura cuando este comenzó a jugar con lápices y pinceles. "Era lo único que no se comía".</li>
+              </ul>
+        </div>
+        
+    </div>
+</div>
+
+
+
+{% endblock %}

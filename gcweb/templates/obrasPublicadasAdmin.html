@@ -1,0 +1,70 @@
+{% extends 'baseAdmin.html' %}
+{% load static %}
+
+{% load crispy_forms_tags %}
+{% block contenido3 %}
+
+
+<style>
+    .table td,
+    .table th {
+        vertical-align: middle;
+        text-align: center;
+    }
+
+    .enlarge-image {
+        transition: transform 0.3s;
+    }
+
+    .enlarge-image:hover {
+        transform: scale(5);
+        max-width: 300px;
+        max-height: 300px;
+    }
+</style>
+
+<div class="container" id="OP2">
+    <div class="row">
+        <div class="col-12 text-center">
+            <h2>Obras Publicadas</h2>
+            <br><br>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-8">
+            <div class="table-responsive">
+                <table class="table table-striped table-hover">
+                    <thead class="thead-light">
+                        <tr>
+                            <th scope="col">Artista</th>
+                            <th scope="col">Nombre de la Obra</th>
+                            <th scope="col">Imagen</th>
+                            <th scope="col">Estado</th> 
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for pub in publicaciones %}
+                        {% if pub.estado == 1 %}
+                        <tr>
+                            <td>{{pub.artista}}</td>
+                            <td>{{pub.nombre_obra}}</td>
+                            <td>
+                                <img src="{{ pub.imagen_obra.url }}" alt="Imagen de la obra" width="50" class="enlarge-image">
+                            </td>
+                            <td>Aprobada</td>
+                        </tr>
+                        {% endif %}
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+    
+    
+            <div class="col-4"></div>
+        </div>
+    </div>
+
+{% endblock %}

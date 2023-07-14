@@ -1,0 +1,54 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block contenido %}
+<br>
+
+
+<div class="" style="margin-top: 5px" >
+    <h2 style="text-align: center;">Galería</h2>
+    <br> <br>
+    <div id="galeria" class="row">
+      <div class="cont-profesionales col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="cont-listado row">
+
+          {% for p in publicaciones %}
+
+          <div style="text-align: center;" class="col-lg-4 mx-auto" >
+            <div class="art int">
+              <figure>
+                  {% if p.imagen_obra %}
+                  <img width="230" height="300"
+                    style="border-radius: 15px;"
+                    src="{{p.imagen_obra.url}}"
+                    class="img-responsive wp-post-image" alt="" decoding="async" loading="lazy"> </a>
+
+                  {% else %}
+
+                  <img width="230" height="300"
+                  src=""
+                  class="img-responsive wp-post-image" alt="" decoding="async" loading="lazy"> </a>
+
+                  {% endif %}  
+                
+                <h5 >{{p.nombre_obra}}</h5>
+                <p>
+                    <h6 >{{p.descripcion_obra}}</h6>
+                </p>
+                <br><br>
+
+
+              </figure>
+
+            </div>
+          </div>
+          {% endfor %}
+
+
+
+
+      </div>
+    </div>
+  </div>
+
+
+  {% endblock %}

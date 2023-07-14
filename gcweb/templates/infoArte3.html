@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block contenido %}
+
+<div class="container">
+    <div class="row">
+
+        <div class="col-4"><img src="{% static './imagenes/Alfareria1.png' %}" class="img-thumbnail" alt="DinoMacetero"></div>
+        <div class="col-8" id="DinoMacetero">
+            <ul class="list-unstyled">
+                <li><b>Mónica.N</b></li>
+                <li>Artista Chilena </li>
+                <li>Ceramista  : <b>DinoMacetero</b></li>
+                <li> técnica usada : <b>Esculpida en Porcelana</b></li>
+                <li><b>Precio</b>:
+                  <ul>
+                    <li>120.000 CLP <b>(Vendido)</b></li>
+                    
+                  </ul>
+                </li>
+                <li>Mónica.M artista oriunda de Iquique, su pasión por los dinosaurios la llevo a crear distintos tipos de esculturas basada en estos interesantes animales prehistóricos, hechos 100% a mano y procesados a más de 1000° Celsius, años de experiencia le han permitido dominar distintas técnicas de esculpido. </li>
+              </ul>
+        </div>
+        
+    </div>
+</div>
+
+
+
+{% endblock %}
